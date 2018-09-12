@@ -170,7 +170,8 @@ for (var i = 0; i < items.length; i++) {
   };
   itemElement.querySelector('.card__price').innerHTML = items[i].price + '<span class="card__currency"> ₽</span><span class="card__weight">/ ' + items[i].weight + ' Г</span>';
   itemElement.querySelector('.stars__rating').classList.add(stars[items[i].rating.value]);
-  itemElement.querySelector('.star__count').textContent = items[i].rating.number;
+  itemElement.querySelector('.stars__rating').textContent = 'Рейтинг: ' + items[i].rating.value + ' звёзд'
+  itemElement.querySelector('.star__count').textContent = '(' + items[i].rating.number + ')';
   itemElement.querySelector('.card__characteristic').textContent = sweet[items[i].nutritionFacts.sugar] + '. ' + items[i].nutritionFacts.energy + ' ккал';
   itemElement.querySelector('.card__composition-list').textContent = items[i].nutritionFacts.contents;
 

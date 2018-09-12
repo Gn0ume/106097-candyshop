@@ -1,6 +1,6 @@
 # Личный проект «Кэндишоп» [![Build status][travis-image]][travis-url]
 
-* Студент: [Николай Стебунов](https://up.htmlacademy.ru/javascript/15/user/106097).
+* Студент: [Ксения Кравчук](https://htmlacademy.ru/profile/id846297).
 * Наставник: `Александр Кравчук`.
 
 ---

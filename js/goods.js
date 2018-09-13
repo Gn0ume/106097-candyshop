@@ -71,7 +71,6 @@ var pictures = [
   'img/cards/soda-garlic.jpg',
   'img/cards/soda-peanut-grapes.jpg',
   'img/cards/soda-russian.jpg'
-
 ];
 
 var ingredients = [
@@ -99,11 +98,21 @@ var getRandomInteger = function (min, max) {
     return Math.floor(min + Math.random() * (max + 1 - min));
 };
 
-var getRandomСonsist = function (arr, qty) {
-  var consist = getRandomElement(arr);
+var getMixedArray = function (arr) {
+  for(var i = arr.length - 1; i > 0; i--){
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+  return arr;
+};
+
+var getRandomСonsist = function (arr) {
+  var qty = getRandomInteger(1, 18);
+  var consist = arr[0];
   for (var i = 1; i < qty; i++) {
-    var element = getRandomElement(arr);
-    consist = consist + ', ' + element;
+    consist = consist + ', ' + arr[i];
     }
   return consist;
 }
@@ -127,7 +136,7 @@ var getElements = function (arr, arrLength) {
       nutritionFacts: {
         sugar: Boolean(getRandomInteger(0, 1)),
         energy: getRandomInteger(70, 500),
-        contents: getRandomСonsist(ingredients, getRandomInteger(3,10))
+        contents: getRandomСonsist(getMixedArray(ingredients))
       }
     }
   }
